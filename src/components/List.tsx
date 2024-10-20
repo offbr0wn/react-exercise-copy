@@ -88,9 +88,6 @@ export function List({ values }: { values: NasaSearchParams }) {
                 />
               </div>
             }
-            classNames={{
-              wrapper: "overflow-none",
-            }}
             style={{ width: "100%" }} // Ensure table takes full width and cells are fixed
           >
             <TableHeader className="overflow-wrap: break-word">
