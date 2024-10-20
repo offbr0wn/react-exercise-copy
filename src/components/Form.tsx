@@ -19,8 +19,8 @@ export const formSchema = z.object({
   yearStart: z
     .string()
     .superRefine((val, ctx) => {
-      if (val === "") return;
       const year = Number(val);
+      if (val === "") return;
       if (isNaN(year)) {
         ctx.addIssue({
           code: z.ZodIssueCode.custom,
