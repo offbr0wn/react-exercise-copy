@@ -82,7 +82,6 @@ export function Form({
   return (
     <>
       <form noValidate onSubmit={handleSubmit(onSubmit)}>
-        {/* TODO update form elements */}
         <Box marginBottom="m">
           <Box marginBottom="m">
             <TextField
@@ -97,7 +96,7 @@ export function Form({
             <Select
               {...register("mediaType")}
               errorMessage={errors.mediaType?.message}
-              label="Media Type"
+              label="Media type"
               required
             >
               <option disabled>--Please choose an option--</option>
@@ -112,7 +111,7 @@ export function Form({
             <TextField
               {...register("yearStart")}
               errorMessage={errors.yearStart?.message}
-              label="Year Start"
+              label="Year start"
             />
           </Box>
         </Box>
