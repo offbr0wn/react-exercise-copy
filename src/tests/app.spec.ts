@@ -75,7 +75,6 @@ test.describe("NASA API Data Display Tests", () => {
     // Ensure the page is fully loaded
     await page.waitForLoadState("networkidle");
 
-    // Fill in the form fields with valid data
     await page.fill('input[name="keywords"]', "moon");
     await page.selectOption('select[name="mediaType"]', "video");
     await page.fill('input[name="yearStart"]', "2000");

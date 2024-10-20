@@ -34,29 +34,3 @@ export type LinkType = {
   rel: string;
   render: string;
 };
-
-export type NasaMediaApiResponse = {
-  status: string;
-  fetchStatus: string;
-  isLoading: boolean;
-  isSuccess: boolean;
-  isError: boolean;
-  isInitialLoading: boolean;
-  data: NasaResponse[];
-  dataUpdatedAt: number;
-  error: null | string;
-  errorUpdatedAt: number;
-  failureCount: number;
-  failureReason: null | string;
-  errorUpdateCount: number;
-  isFetched: boolean;
-  isFetchedAfterMount: boolean;
-  isFetching: boolean;
-  isRefetching: boolean;
-  isLoadingError: boolean;
-  isPaused: boolean;
-  isPlaceholderData: boolean;
-  isPreviousData: boolean;
-  isRefetchError: boolean;
-  isStale: boolean;
-};
