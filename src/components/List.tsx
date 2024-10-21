@@ -52,7 +52,7 @@ export function List({ values }: { values: NasaSearchParams }) {
           queryKey: ["nasaMedia", nasaId],
           queryFn: () =>
             fetch(nasaMediaApi(nasaId ?? "")).then((res) => res.json()),
-          enabled: !!nasaId,
+          enabled: !!urlNasaSearchUrl.length,
         };
       }) || [],
   });
