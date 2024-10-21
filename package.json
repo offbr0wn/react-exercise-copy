@@ -40,6 +40,6 @@
     "eslint-plugin-prettier": "^5.0.1",
     "eslint-plugin-promise": "^6",
     "prettier": "^3",
-    "typescript": "^5.0.2"
+    "typescript": "^5.6.3"
   }
 }
