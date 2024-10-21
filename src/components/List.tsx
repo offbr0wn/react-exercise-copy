@@ -21,7 +21,7 @@ export function List({ values }: { values: NasaSearchParams }) {
     ? urlNasaSearch(values as NasaSearchParams)
     : "";
 
-  // will default to page 1 when the search params change
+  // Will default to page 1 when the search params changes
   useEffect(() => {
     setPage(1);
   }, [values]);
@@ -33,7 +33,7 @@ export function List({ values }: { values: NasaSearchParams }) {
     { enabled: !!urlNasaSearchUrl.length }
   );
 
-  // Adds index to each item to match the media api query
+  // Adds index to each Nasa item
   const nasaDataWithIndex = useMemo(() => {
     return (
       nasaData?.collection?.items?.map((item, index) => ({
@@ -43,7 +43,7 @@ export function List({ values }: { values: NasaSearchParams }) {
     );
   }, [nasaData]);
 
-  // Fetches media from nasa api for assets
+  //Loops through nasa item to fetch media from asset api
   const mediaApiQuery = useQueries({
     queries:
       nasaData?.collection?.items?.map((item) => {
@@ -61,11 +61,12 @@ export function List({ values }: { values: NasaSearchParams }) {
   const [page, setPage] = useState(1);
   const rowsPerPage = 10;
 
-  // Calculate the total number of pages needed to display all items.
+  // Calculates the total number of pages needed to display all items.
   const pages = Math.ceil(
     nasaData?.collection?.items?.length || 0 / rowsPerPage
   );
 
+  // Return the sliced array of items for the current page, or an empty array if undefined
   const items = useMemo(() => {
     const start = (page - 1) * rowsPerPage;
     const end = start + rowsPerPage;

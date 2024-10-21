@@ -7,15 +7,20 @@ import { Dispatch, SetStateAction } from "react";
 import { NasaSearchParams } from "../types";
 
 const currentYear = new Date().getFullYear();
-
+// Validation schema for each of fields
 export const formSchema = z.object({
   keywords: z
     .string()
     .min(2, "keywords must have at least 2 characters.")
     .max(50, "keywords must have at most 50 characters."),
+
+  //If the value does not match any of these options, an error message will be displayed.
   mediaType: z.enum(["audio", "video", "image"], {
     errorMap: () => ({ message: "Please select a media type" }),
   }),
+  // Checks if no val then returns no error message,
+  // If not a number then error will display
+
   yearStart: z
     .string()
     .superRefine((val, ctx) => {
@@ -40,6 +45,7 @@ export const formSchema = z.object({
         });
       }
     })
+    // Converts the string val into number
     .transform((val) => (val ? Number(val) : undefined))
     .optional(),
 });
